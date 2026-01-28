@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-strong: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--muted-strong);
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-secondary: var(--accent-secondary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+html {
+  color-scheme: dark;
+}
+
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --background: #f8f5f0;
+  --foreground: #171717;
+  --surface: #ffffff;
+  --surface-muted: #f1ede7;
+  --border: #e4ded6;
+  --border-strong: #cfc6bb;
+  --muted: #6b6b6b;
+  --muted-strong: #4a4a4a;
+  --accent-primary: #e16f47;
+  --accent-secondary: #2961a1;
+}
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+
+  --background: #0b0b0b;
+  --foreground: #f5f2ee;
+  --surface: #141210;
+  --surface-muted: #1c1916;
+  --border: #2c2824;
+  --border-strong: #3b3530;
+  --muted: #b5ada4;
+  --muted-strong: #d4ccc3;
+  --accent-primary: #e16f47;
+  --accent-secondary: #2961a1;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans);
+}
+
+.bg-base {
+  background-color: var(--background);
+}
+
+.surface {
+  background-color: var(--surface);
+}
+
+.border-subtle {
+  border-color: var(--border);
+}
+
+.border-strong {
+  border-color: var(--border-strong);
+}
+
+.text-strong {
+  color: var(--foreground);
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-subtle {
+  color: var(--muted-strong);
+}
+
+.text-accent-primary {
+  color: var(--accent-primary);
+}
+
+.text-accent-secondary {
+  color: var(--accent-secondary);
+}
+
+.btn-primary {
+  background-color: var(--accent-primary);
+  color: white;
+}
+
+.bg-surface {
+  background-color: var(--surface);
+}
+
+.bg-surface-muted {
+  background-color: var(--surface-muted);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
