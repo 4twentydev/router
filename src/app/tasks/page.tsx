@@ -107,20 +107,20 @@ export default function EmployeeTasksPage() {
 
   return (
     <div className="flex min-h-screen flex-col bg-base">
-      <header className="border-b border-subtle bg-surface">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
+      <header className="sticky top-0 z-10 border-b border-subtle bg-surface">
+        <div className="mx-auto flex max-w-2xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-accent-secondary">
               ES
             </p>
             <h1 className="text-lg font-semibold text-strong">Router</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted">Hello, {user?.name}</span>
+          <div className="flex items-center gap-2 sm:gap-4">
+            <span className="hidden text-sm text-muted sm:block">Hello, {user?.name}</span>
             <ThemeToggle />
             <button
               onClick={handleLogout}
-              className="rounded-full border border-subtle px-4 py-2 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong"
+              className="rounded-full border border-subtle px-3 py-1.5 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong sm:px-4 sm:py-2"
             >
               Logout
             </button>
@@ -129,24 +129,24 @@ export default function EmployeeTasksPage() {
       </header>
 
       <main className="flex-1">
-        <div className="mx-auto max-w-2xl px-6 py-10">
+        <div className="mx-auto max-w-2xl px-0 py-0 sm:px-4 sm:py-6">
           <motion.section
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="rounded-3xl border border-subtle bg-surface p-6 shadow-sm"
+            className="min-h-[calc(100vh-57px)] bg-surface p-4 sm:min-h-0 sm:rounded-2xl sm:border sm:border-subtle sm:p-6 sm:shadow-sm"
           >
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-2xl font-semibold text-strong">My Tasks</h2>
+            <div className="mb-4 flex items-center justify-between gap-2">
+              <h2 className="text-xl font-semibold text-strong sm:text-2xl">My Tasks</h2>
               <button
                 onClick={() => setShowCompleted(!showCompleted)}
-                className="rounded-full border border-subtle px-4 py-2 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong"
+                className="shrink-0 rounded-full border border-subtle px-3 py-1.5 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong sm:px-4 sm:py-2"
               >
-                {showCompleted ? 'Hide Completed' : 'Show Completed'}
+                {showCompleted ? 'Hide Done' : 'Show Done'}
               </button>
             </div>
 
-            <div className="mb-6 flex gap-4 text-sm">
+            <div className="mb-4 flex gap-4 text-sm sm:mb-6">
               <span className="text-muted">
                 Pending:{' '}
                 <span className="font-semibold text-strong">
@@ -154,22 +154,22 @@ export default function EmployeeTasksPage() {
                 </span>
               </span>
               <span className="text-muted">
-                Completed:{' '}
+                Done:{' '}
                 <span className="font-semibold text-emerald-500">
                   {completedTasks.length}
                 </span>
               </span>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3 sm:gap-4">
               {tasks.length === 0 ? (
-                <div className="py-12 text-center">
-                  <div className="mb-4 text-4xl">
+                <div className="py-16 text-center sm:py-12">
+                  <div className="mb-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
                       fill="currentColor"
-                      className="mx-auto h-16 w-16 text-muted"
+                      className="mx-auto h-14 w-14 text-muted sm:h-16 sm:w-16"
                     >
                       <path
                         fillRule="evenodd"

@@ -151,19 +151,19 @@ export default function AdminDashboard() {
   return (
     <div className="flex min-h-screen flex-col bg-base">
       <header className="border-b border-subtle bg-surface">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-8 lg:py-5">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-accent-secondary">
               ES
             </p>
-            <h1 className="text-lg font-semibold text-strong">Router</h1>
+            <h1 className="text-lg font-semibold text-strong">Router Admin</h1>
           </div>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-muted">Welcome, {user?.name}</span>
+          <div className="flex items-center gap-3 lg:gap-4">
+            <span className="hidden text-sm text-muted md:block">Welcome, {user?.name}</span>
             <ThemeToggle />
             <button
               onClick={handleLogout}
-              className="rounded-full border border-subtle px-4 py-2 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong"
+              className="rounded-full border border-subtle px-3 py-1.5 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong lg:px-4 lg:py-2"
             >
               Logout
             </button>
@@ -172,17 +172,17 @@ export default function AdminDashboard() {
       </header>
 
       <main className="flex-1">
-        <div className="mx-auto max-w-5xl px-6 py-10">
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] xl:gap-8">
+        <div className="mx-auto max-w-6xl px-4 py-6 lg:px-8 lg:py-8">
+          <div className="grid gap-6 lg:grid-cols-[1fr_1fr] xl:grid-cols-[1.2fr_1fr] xl:gap-8">
             {/* Left Column - Task Creation */}
-            <section className="flex flex-col gap-6">
+            <section className="flex flex-col gap-5 lg:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className="rounded-3xl border border-subtle bg-surface p-6 shadow-sm"
+                className="rounded-2xl border border-subtle bg-surface p-5 shadow-sm lg:rounded-3xl lg:p-6"
               >
-                <h2 className="mb-6 text-2xl font-semibold text-strong">
+                <h2 className="mb-5 text-xl font-semibold text-strong lg:mb-6 lg:text-2xl">
                   Create Task
                 </h2>
                 <PalletBuilderForm
@@ -197,15 +197,15 @@ export default function AdminDashboard() {
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
-                className="rounded-3xl border border-subtle bg-surface p-6 shadow-sm"
+                className="rounded-2xl border border-subtle bg-surface p-5 shadow-sm lg:rounded-3xl lg:p-6"
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-strong">
+                  <h2 className="text-base font-semibold text-strong lg:text-lg">
                     Employees
                   </h2>
                   <button
                     onClick={() => setShowAddEmployee(!showAddEmployee)}
-                    className="rounded-full border border-subtle px-4 py-2 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong"
+                    className="rounded-full border border-subtle px-3 py-1.5 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong lg:px-4 lg:py-2"
                   >
                     {showAddEmployee ? 'Cancel' : 'Add Employee'}
                   </button>
@@ -225,7 +225,7 @@ export default function AdminDashboard() {
                         placeholder="Employee name"
                         value={newEmployeeName}
                         onChange={(e) => setNewEmployeeName(e.target.value)}
-                        className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+                        className="w-full rounded-xl border border-subtle bg-transparent px-4 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:py-3"
                         required
                       />
                       <input
@@ -236,12 +236,12 @@ export default function AdminDashboard() {
                         onChange={(e) =>
                           setNewEmployeePin(e.target.value.replace(/\D/g, ''))
                         }
-                        className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+                        className="w-full rounded-xl border border-subtle bg-transparent px-4 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:py-3"
                         required
                       />
                       <button
                         type="submit"
-                        className="btn-primary rounded-full px-6 py-3 text-sm font-semibold transition-all hover:brightness-95"
+                        className="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:brightness-95 lg:px-6 lg:py-3"
                       >
                         Add Employee
                       </button>
@@ -266,22 +266,22 @@ export default function AdminDashboard() {
             </section>
 
             {/* Right Column - Task List */}
-            <aside className="flex flex-col gap-6">
+            <aside className="flex flex-col gap-5 lg:gap-6">
               <motion.div
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.15 }}
-                className="rounded-3xl border border-subtle bg-surface p-6 shadow-sm"
+                className="rounded-2xl border border-subtle bg-surface p-5 shadow-sm lg:rounded-3xl lg:p-6"
               >
                 <div className="mb-4 flex items-center justify-between">
-                  <h2 className="text-lg font-semibold text-strong">
+                  <h2 className="text-base font-semibold text-strong lg:text-lg">
                     Task List
                   </h2>
                   <button
                     onClick={() => setShowCompleted(!showCompleted)}
-                    className="rounded-full border border-subtle px-4 py-2 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong"
+                    className="rounded-full border border-subtle px-3 py-1.5 text-xs font-semibold text-subtle transition-all hover:border-strong hover:text-strong lg:px-4 lg:py-2"
                   >
-                    {showCompleted ? 'Hide Completed' : 'Show Completed'}
+                    {showCompleted ? 'Hide Done' : 'Show Done'}
                   </button>
                 </div>
 
@@ -293,14 +293,14 @@ export default function AdminDashboard() {
                     </span>
                   </span>
                   <span className="text-muted">
-                    Completed:{' '}
+                    Done:{' '}
                     <span className="font-semibold text-emerald-500">
                       {completedTasks.length}
                     </span>
                   </span>
                 </div>
 
-                <div className="flex max-h-[500px] flex-col gap-3 overflow-y-auto">
+                <div className="flex max-h-[400px] flex-col gap-3 overflow-y-auto lg:max-h-[500px]">
                   {tasks.length === 0 ? (
                     <p className="py-8 text-center text-sm text-muted">
                       No tasks yet

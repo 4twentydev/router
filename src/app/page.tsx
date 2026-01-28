@@ -98,7 +98,7 @@ export default function LoginPage() {
   return (
     <div className="flex min-h-screen flex-col bg-base">
       <header className="border-b border-subtle bg-surface">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-6">
+        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-4 sm:px-6 sm:py-5">
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-accent-secondary">
               ES
@@ -108,21 +108,21 @@ export default function LoginPage() {
         </div>
       </header>
 
-      <main className="flex flex-1 items-center justify-center px-6 py-10">
+      <main className="flex flex-1 items-center justify-center px-4 py-8 sm:px-6">
         <motion.section
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="w-full max-w-sm rounded-3xl border border-subtle bg-surface p-8 shadow-sm"
+          className="w-full max-w-sm rounded-3xl border border-subtle bg-surface p-6 shadow-sm sm:p-8"
         >
-          <div className="mb-8 text-center">
-            <h2 className="text-2xl font-semibold text-strong">Enter PIN</h2>
+          <div className="mb-6 text-center sm:mb-8">
+            <h2 className="text-xl font-semibold text-strong sm:text-2xl">Enter PIN</h2>
             <p className="mt-2 text-sm text-muted">
               Enter your 4-digit PIN to continue
             </p>
           </div>
 
-          <div className="mb-6 flex justify-center gap-3">
+          <div className="mb-6 flex justify-center gap-2 sm:gap-3">
             {pin.map((digit, index) => (
               <input
                 key={index}
@@ -136,7 +136,7 @@ export default function LoginPage() {
                 onChange={(e) => handlePinChange(index, e.target.value)}
                 onKeyDown={(e) => handleKeyDown(index, e)}
                 disabled={isLoading}
-                className="h-14 w-14 rounded-2xl border border-subtle bg-transparent text-center text-2xl font-semibold text-strong focus:border-[color:var(--accent-secondary)] focus:outline-none disabled:opacity-60"
+                className="h-14 w-14 rounded-xl border border-subtle bg-transparent text-center text-2xl font-semibold text-strong focus:border-[color:var(--accent-secondary)] focus:outline-none disabled:opacity-60 sm:h-16 sm:w-16 sm:rounded-2xl"
                 autoFocus={index === 0}
               />
             ))}
