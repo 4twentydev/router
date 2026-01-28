@@ -85,16 +85,16 @@ export function PalletBuilderForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-3 lg:gap-4">
       <div>
-        <label className="mb-2 block text-sm font-medium text-subtle">
+        <label className="mb-1.5 block text-sm font-medium text-subtle lg:mb-2">
           Assign To
         </label>
         <select
           name="assignedTo"
           value={formData.assignedTo}
           onChange={handleChange}
-          className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong focus:border-[color:var(--accent-secondary)] focus:outline-none"
+          className="w-full rounded-xl border border-subtle bg-transparent px-3 py-2.5 text-sm text-strong focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:px-4 lg:py-3"
           required
         >
           <option value="">Select employee...</option>
@@ -106,14 +106,14 @@ export function PalletBuilderForm({
         </select>
       </div>
 
-      <div className="rounded-2xl border border-subtle p-4">
-        <h3 className="mb-4 text-sm font-semibold text-subtle">
+      <div className="rounded-xl border border-subtle p-3 lg:rounded-2xl lg:p-4">
+        <h3 className="mb-3 text-sm font-semibold text-subtle lg:mb-4">
           Pallet Builder Details
         </h3>
 
-        <div className="grid gap-4 md:grid-cols-2">
+        <div className="grid gap-3 lg:grid-cols-2 lg:gap-4">
           <div>
-            <label className="mb-2 block text-sm font-medium text-subtle">
+            <label className="mb-1.5 block text-sm font-medium text-subtle lg:mb-2">
               Job Number
             </label>
             <input
@@ -122,13 +122,13 @@ export function PalletBuilderForm({
               value={formData.jobNumber}
               onChange={handleChange}
               placeholder="e.g., JOB-2024-001"
-              className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+              className="w-full rounded-xl border border-subtle bg-transparent px-3 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:px-4 lg:py-3"
               required
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-subtle">
+            <label className="mb-1.5 block text-sm font-medium text-subtle lg:mb-2">
               Pallet Number
             </label>
             <input
@@ -137,43 +137,43 @@ export function PalletBuilderForm({
               value={formData.palletNumber}
               onChange={handleChange}
               placeholder="e.g., P-001"
-              className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+              className="w-full rounded-xl border border-subtle bg-transparent px-3 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:px-4 lg:py-3"
               required
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-subtle">
-              Pallet Width
+            <label className="mb-1.5 block text-sm font-medium text-subtle lg:mb-2">
+              Width
             </label>
             <input
               type="text"
               name="palletWidth"
               value={formData.palletWidth}
               onChange={handleChange}
-              placeholder="e.g., 48 inches"
-              className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+              placeholder="e.g., 48 in"
+              className="w-full rounded-xl border border-subtle bg-transparent px-3 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:px-4 lg:py-3"
               required
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-medium text-subtle">
-              Pallet Length
+            <label className="mb-1.5 block text-sm font-medium text-subtle lg:mb-2">
+              Length
             </label>
             <input
               type="text"
               name="palletLength"
               value={formData.palletLength}
               onChange={handleChange}
-              placeholder="e.g., 40 inches"
-              className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+              placeholder="e.g., 40 in"
+              className="w-full rounded-xl border border-subtle bg-transparent px-3 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:px-4 lg:py-3"
               required
             />
           </div>
 
-          <div className="md:col-span-2">
-            <label className="mb-2 block text-sm font-medium text-subtle">
+          <div className="lg:col-span-2">
+            <label className="mb-1.5 block text-sm font-medium text-subtle lg:mb-2">
               Material
             </label>
             <input
@@ -182,7 +182,7 @@ export function PalletBuilderForm({
               value={formData.material}
               onChange={handleChange}
               placeholder="e.g., Pine, Oak, Composite"
-              className="w-full rounded-2xl border border-subtle bg-transparent px-4 py-3 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none"
+              className="w-full rounded-xl border border-subtle bg-transparent px-3 py-2.5 text-sm text-strong placeholder-muted focus:border-[color:var(--accent-secondary)] focus:outline-none lg:rounded-2xl lg:px-4 lg:py-3"
               required
             />
           </div>
@@ -192,7 +192,7 @@ export function PalletBuilderForm({
       <button
         type="submit"
         disabled={isSubmitting}
-        className="btn-primary rounded-full px-6 py-3 text-sm font-semibold transition-all hover:brightness-95 disabled:opacity-60"
+        className="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold transition-all hover:brightness-95 disabled:opacity-60 lg:px-6 lg:py-3"
       >
         {isSubmitting ? 'Creating...' : 'Create Task'}
       </button>
